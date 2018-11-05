@@ -20,16 +20,16 @@ const theme = createMuiTheme({
     common: { black: '#000', white: '#fff' },
     background: { paper: '#fff', default: '#fafafa' },
     primary: {
-      light: 'rgba(255, 221, 75, 1)',
-      main: 'rgba(255, 171, 0, 1)',
-      dark: 'rgba(198, 124, 0, 1)',
+      light: 'rgba(255, 211, 82, 1)',
+      main: 'rgba(230, 162, 25, 1)',
+      dark: 'rgba(175, 116, 0, 1)',
       contrastText: 'rgba(0, 0, 0, 1)',
     },
     secondary: {
-      light: 'rgba(107, 143, 255, 1)',
-      main: 'rgba(0, 98, 255, 1)',
-      dark: 'rgba(0, 57, 203, 1)',
-      contrastText: '#fff',
+      light: 'rgba(164, 186, 135, 1)',
+      main: 'rgba(117, 138, 90, 1)',
+      dark: 'rgba(73, 93, 48, 1)',
+      contrastText: 'rgba(0, 0, 0, 1)',
     },
     error: {
       light: '#e57373',
