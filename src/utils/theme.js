@@ -17,15 +17,31 @@ const theme = createMuiTheme({
     ].join(','),
   },
   palette: {
+    common: { black: '#000', white: '#fff' },
+    background: { paper: '#fff', default: '#fafafa' },
     primary: {
-      main: '#6200EE',
-      light: '#9e47ff',
-      dark: '#0400ba',
+      light: 'rgba(255, 221, 75, 1)',
+      main: 'rgba(255, 171, 0, 1)',
+      dark: 'rgba(198, 124, 0, 1)',
+      contrastText: 'rgba(0, 0, 0, 1)',
     },
     secondary: {
-      main: '#03DAC5',
-      light: '#66fff8',
-      dark: '#00a895',
+      light: 'rgba(107, 143, 255, 1)',
+      main: 'rgba(0, 98, 255, 1)',
+      dark: 'rgba(0, 57, 203, 1)',
+      contrastText: '#fff',
+    },
+    error: {
+      light: '#e57373',
+      main: '#f44336',
+      dark: '#d32f2f',
+      contrastText: '#fff',
+    },
+    text: {
+      primary: 'rgba(0, 0, 0, 0.87)',
+      secondary: 'rgba(0, 0, 0, 0.54)',
+      disabled: 'rgba(0, 0, 0, 0.38)',
+      hint: 'rgba(0, 0, 0, 0.38)',
     },
   },
 });
