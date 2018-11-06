@@ -56,8 +56,8 @@ class App extends Component {
             <div className={classes.appBarSpacer} />
             <Switch>
               <Route exact path="/brews" component={Brews} />
-              <Route exact path="/brews/:id" component={Brew} />
               <Route exact path="/brews/create" component={CreateBrew} />
+              <Route exact path="/brews/:id" component={Brew} />
             </Switch>
           </main>
         </div>

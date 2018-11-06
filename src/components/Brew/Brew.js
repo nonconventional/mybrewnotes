@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Paper, Typography } from '@material-ui/core';
 import { Redirect } from 'react-router-dom';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 class Brew extends Component {
   render() {

@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import MUIDataTable from 'mui-datatables';
+import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+});
 
 class Brews extends Component {
   onRowClick = (rowData, { rowIndex }) => {
@@ -12,7 +22,7 @@ class Brews extends Component {
   };
 
   render() {
-    const { brews } = this.props;
+    const { brews, classes } = this.props;
     const columns = [
       {
         name: 'Name',
@@ -34,7 +44,21 @@ class Brews extends Component {
       return [...newData, [brew.name]];
     }, []);
 
-    return <MUIDataTable columns={columns} data={data} options={options} />;
+    return (
+      <>
+        <MUIDataTable columns={columns} data={data} options={options} />
+        <Button
+          variant="fab"
+          color="primary"
+          component={Link}
+          aria-label="Add"
+          className={classes.button}
+          to="/brews/create"
+        >
+          <AddIcon />
+        </Button>
+      </>
+    );
   }
 }
 
@@ -51,4 +75,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(Brews));
+export default withRouter(withStyles(styles)(connect(mapStateToProps)(Brews)));
