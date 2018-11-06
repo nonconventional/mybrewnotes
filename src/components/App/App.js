@@ -7,6 +7,8 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header';
 import AppDrawer from '../AppDrawer';
 import CreateBrew from '../CreateBrew';
+import Brews from '../Brews';
+import Brew from '../Brew';
 
 const styles = theme => ({
   root: {
@@ -53,7 +55,9 @@ class App extends Component {
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
             <Switch>
-              <Route path="/brews/create" component={CreateBrew} />
+              <Route exact path="/brews" component={Brews} />
+              <Route exact path="/brews/:id" component={Brew} />
+              <Route exact path="/brews/create" component={CreateBrew} />
             </Switch>
           </main>
         </div>

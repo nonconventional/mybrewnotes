@@ -7,6 +7,7 @@ import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -21,6 +22,10 @@ const styles = theme => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  active: {
+    color: theme.palette.primary.main,
+    fontWeight: theme.typography.fontWeightMedium,
+  },
 });
 
 function AppDrawer({ classes, handleDrawerToggle, mobileOpen, theme }) {
@@ -29,9 +34,13 @@ function AppDrawer({ classes, handleDrawerToggle, mobileOpen, theme }) {
       <div className={classes.appBarSpacer} />
       <Divider />
       <List>
-        {['Brews'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
+        {[{ title: 'Brews', href: '/brews' }].map(({ title, href }, index) => (
+          <ListItem
+            button
+            component={props => <Link to={href} {...props} />}
+            key={title}
+          >
+            <ListItemText>{title}</ListItemText>
           </ListItem>
         ))}
       </List>
