@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Route, Switch } from 'react-router-dom';
 
 import Header from '../Header';
 import AppDrawer from '../AppDrawer';
+import CreateBrew from '../CreateBrew';
 
 const styles = theme => ({
   root: {
@@ -50,6 +52,9 @@ class App extends Component {
           />
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
+            <Switch>
+              <Route path="/brews/create" component={CreateBrew} />
+            </Switch>
           </main>
         </div>
       </>
