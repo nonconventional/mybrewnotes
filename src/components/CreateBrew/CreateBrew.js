@@ -35,57 +35,51 @@ class CreateBrew extends Component {
     const { add, classes, handleSubmit, pristine, submitting } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(add)}>
-        <Paper className={classes.container}>
-          <Field
-            id="name"
-            component={TextField}
-            margin="dense"
-            name="name"
-            placeholder="Name"
-            label="Name"
-            validate={[required]}
-          />
-          <Field
-            id="description"
-            component={TextField}
-            label="Description"
-            multiline
-            name="description"
-            margin="dense"
-            placeholder="Description"
-            rows={3}
-            rowsMax={5}
-            validate={[required]}
-          />
-          <Field
-            id="batch-size"
-            component={TextField}
-            margin="dense"
-            name="batch-size"
-            placeholder="Batch Size"
-            label="Batch Size"
-            validate={[required]}
-          />
-          <Divider className={classes.divider} />
-          <Typography align="left" gutterBottom variant="h6">
-            Ingredients
-          </Typography>
-          <FieldArray component={ListField} name="ingredients" />
-          <Divider className={classes.divider} />
-          <Typography align="left" gutterBottom variant="h6">
-            Steps
-          </Typography>
-          <FieldArray component={ListField} name="steps" />
-          <Divider className={classes.divider} />
-          <Button
-            color="primary"
-            disabled={pristine || submitting}
-            type="submit"
-          >
-            Save
-          </Button>
-        </Paper>
+      <form className={classes.container} onSubmit={handleSubmit(add)}>
+        <Field
+          id="name"
+          component={TextField}
+          margin="dense"
+          name="name"
+          placeholder="Name"
+          label="Name"
+          validate={[required]}
+        />
+        <Field
+          id="description"
+          component={TextField}
+          label="Description"
+          multiline
+          name="description"
+          margin="dense"
+          placeholder="Description"
+          rows={3}
+          rowsMax={5}
+          validate={[required]}
+        />
+        <Field
+          id="batch-size"
+          component={TextField}
+          margin="dense"
+          name="batch-size"
+          placeholder="Batch Size"
+          label="Batch Size"
+          validate={[required]}
+        />
+        <Divider className={classes.divider} />
+        <Typography align="left" gutterBottom variant="h6">
+          Ingredients
+        </Typography>
+        <FieldArray component={ListField} name="ingredients" />
+        <Divider className={classes.divider} />
+        <Typography align="left" gutterBottom variant="h6">
+          Steps
+        </Typography>
+        <FieldArray component={ListField} name="steps" />
+        <Divider className={classes.divider} />
+        <Button color="primary" disabled={pristine || submitting} type="submit">
+          Save
+        </Button>
       </form>
     );
   }
