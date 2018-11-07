@@ -6626,10 +6626,10 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
-mui-datatables@^2.0.0-beta-37:
-  version "2.0.0-beta-37"
-  resolved "https://registry.yarnpkg.com/mui-datatables/-/mui-datatables-2.0.0-beta-37.tgz#5dd8e541053618f8d9dff5aa7cdebc8eb54ef280"
-  integrity sha512-sdfXg4dfxKFEz2WX/WNYk6TKvLI13JWkr6wIACfa34iVqO2z7f3u6OK/mXixEtlp4YBNnlExcnE7kbgUArPFJA==
+mui-datatables@2.0.0-beta-38:
+  version "2.0.0-beta-38"
+  resolved "https://registry.yarnpkg.com/mui-datatables/-/mui-datatables-2.0.0-beta-38.tgz#30b2bd9d557eab9809456741630271b5b89cb317"
+  integrity sha512-vYytrCm45mhPB4kYZZjK0w1O+WzyUZ77ZZUciU/gtuT2sBo/y8Kk9moyPUGFOgdXGnSboeSM/Tho79e/UOOHaw==
   dependencies:
     classnames "^2.2.5"
     lodash.clonedeep "^4.5.0"
@@ -8042,7 +8042,12 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
-prettier@^1.14.2, prettier@^1.14.3:
+prettier@1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.15.0.tgz#c6191a50fbc9056ff770577d64ebd9987cca1dd7"
+  integrity sha512-NtSOnDRmJaNuruoX0KhDdQ3UGyLNJaSuP2eJn6Q6uSvzQBAJQHZbXgraFPbv8sYbNaMR9nz7scMy55WC+78E6w==
+
+prettier@^1.14.2:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.3.tgz#90238dd4c0684b7edce5f83b0fb7328e48bd0895"
   integrity sha512-qZDVnCrnpsRJJq5nSsiHCE3BYMED2OtsI+cmzIzF1QIfqm5ALf8tEJcO27zV1gKNKRPdhjO0dNWnrzssDQ1tFg==
@@ -8379,7 +8384,7 @@ react-router-dom@^4.3.1:
     react-router "^4.3.1"
     warning "^4.0.1"
 
-react-router@^4.3.1:
+react-router@4.3.1, react-router@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.3.1.tgz#aada4aef14c809cb2e686b05cee4742234506c4e"
   integrity sha512-yrvL8AogDh2X42Dt9iknk4wF4V8bWREPirFfS9gLU1huk6qK41sg7Z/1S81jjTrGHxa3B8R3J6xIkDAA6CVarg==
