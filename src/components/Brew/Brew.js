@@ -60,16 +60,7 @@ class Brew extends Component {
   };
 
   render() {
-    // const { brew } = this.props;
-    const { classes } = this.props;
-
-    const brew = {
-      name: 'DFJkljelkfq',
-      description: 'kdlasjfelq',
-      'batch-size': '100 gallons',
-      ingredients: ['bob', 'water', 'bit of honey', 'magic'],
-      steps: ['Do stuff', 'magic', '??????', 'profit'],
-    };
+    const { brew, classes } = this.props;
 
     if (!brew) {
       return <Redirect to="/brews" />;
@@ -79,12 +70,12 @@ class Brew extends Component {
 
     return (
       <React.Fragment>
-        <Typography variant="title">{name}</Typography>
-        <Typography variant="subheading">{description}</Typography>
+        <Typography variant="h6">{name}</Typography>
+        <Typography variant="subtitle1">{description}</Typography>
         <Grid container>
           <Grid item xs={12} md={6}>
             <Paper className={classes.paper}>
-              <Typography variant="title">Ingredients</Typography>
+              <Typography variant="h6">Ingredients</Typography>
               <List>
                 {ingredients.map(value => (
                   <ListItem
@@ -109,7 +100,7 @@ class Brew extends Component {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper className={classes.paper}>
-              <Typography variant="title">Steps</Typography>
+              <Typography variant="h6">Steps</Typography>
               <List>
                 {steps.map((value, index) => (
                   <ListItem

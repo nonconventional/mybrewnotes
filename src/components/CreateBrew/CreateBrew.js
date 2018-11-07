@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Field, FieldArray, reduxForm, reset } from 'redux-form';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
-import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { push } from 'connected-react-router';
 
 import { required } from '../../utils/validation';
 import TextField from '../TextField';
@@ -28,6 +28,7 @@ const styles = theme => ({
 
 const afterSubmit = (result, dispatch) => {
   dispatch(reset('createBrew'));
+  dispatch(push('/brews'));
 };
 
 class CreateBrew extends Component {

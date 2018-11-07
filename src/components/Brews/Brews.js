@@ -8,6 +8,8 @@ import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
+import { brewActionCreators } from '../../actions';
+
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -22,7 +24,7 @@ class Brews extends Component {
   };
 
   render() {
-    const { brews, classes } = this.props;
+    const { brews, classes, getAllBrews } = this.props;
     const columns = [
       {
         name: 'Name',
@@ -39,6 +41,10 @@ class Brews extends Component {
       download: false,
       onRowClick: this.onRowClick,
     };
+
+    if (brews.length === 0) {
+      getAllBrews();
+    }
 
     const data = brews.reduce((newData, brew) => {
       return [...newData, [brew.name]];
@@ -75,4 +81,15 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(withStyles(styles)(connect(mapStateToProps)(Brews)));
+const mapDispatchToProps = {
+  getAllBrews: brewActionCreators.getAll,
+};
+
+export default withRouter(
+  withStyles(styles)(
+    connect(
+      mapStateToProps,
+      mapDispatchToProps,
+    )(Brews),
+  ),
+);

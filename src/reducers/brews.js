@@ -5,7 +5,10 @@ const initialState = [];
 
 const actionHandlers = {
   [brewActions.ADD](state, { payload }) {
-    return [...state, payload];
+    return [...state, payload.brew];
+  },
+  [brewActions.GET_ALL](state, { payload }) {
+    return payload.allBrews;
   },
 };
 
