@@ -1,4 +1,4 @@
-import firestore from '../utils/firestore';
+import { firestore } from '../utils/createFirebase';
 import { SubmissionError } from 'redux-form';
 
 const BREWS = 'brews';
@@ -28,19 +28,6 @@ const actionCreators = {
 
   getAll() {
     return async dispatch => {
-      // var brewsRef = firestore.collection(BREWS);
-      // var allBrews = brewsRef
-      //   .get()
-      //   .then(snapshot => {
-      //     debugger;
-      //     snapshot.forEach(doc => {
-      //       console.log(doc.id, '=>', doc.data());
-      //     });
-      //   })
-      //   .catch(err => {
-      //     console.log('Error getting documents', err);
-      //   });
-
       try {
         const brewsRef = await firestore.collection(BREWS);
         const snapshot = await brewsRef.get();

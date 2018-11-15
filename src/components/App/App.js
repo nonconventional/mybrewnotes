@@ -7,17 +7,18 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header';
 import AppDrawer from '../AppDrawer';
 import CreateBrew from '../CreateBrew';
+import Login from '../Login';
 import Brews from '../Brews';
 import Brew from '../Brew';
 
 const styles = theme => ({
   root: {
-    textAlign: 'center',
     display: 'flex',
     flexGrow: 1,
   },
   content: {
     flexGrow: 1,
+    textAlign: 'center',
     width: 'auto',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -53,6 +54,7 @@ class App extends Component {
               <Route exact path="/brews" component={Brews} />
               <Route exact path="/brews/create" component={CreateBrew} />
               <Route exact path="/brews/:id" component={Brew} />
+              <Route exact path="/login" component={Login} />
             </Switch>
           </main>
         </div>
