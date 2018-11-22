@@ -59,10 +59,10 @@ class CreateBrew extends Component {
           validate={[required]}
         />
         <Field
-          id="batch-size"
+          id="batchSize"
           component={TextField}
           margin="dense"
-          name="batch-size"
+          name="batchSize"
           placeholder="Batch Size"
           label="Batch Size"
           validate={[required]}

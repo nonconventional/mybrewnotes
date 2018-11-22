@@ -10,9 +10,16 @@ const actions = {
 
 const actionCreators = {
   add(data) {
-    return async dispatch => {
+    return async (dispatch, getState) => {
+      const { user } = getState();
       try {
-        const ref = await firestore.collection(BREWS).add(data);
+        const ref = await firestore.collection(BREWS).add({
+          ...data,
+          user: {
+            displayName: user.displayName,
+            id: user.uid,
+          },
+        });
         dispatch(actionCreators.addSuccess({ id: ref.id, ...data }));
       } catch (e) {
         throw new SubmissionError({});

@@ -17,6 +17,13 @@ const styles = theme => ({
 });
 
 class Brews extends Component {
+  componentDidMount() {
+    const { brews, getAllBrews } = this.props;
+    if (brews.length === 0) {
+      getAllBrews();
+    }
+  }
+
   onRowClick = (rowData, { rowIndex }) => {
     const { history } = this.props;
 
@@ -24,7 +31,7 @@ class Brews extends Component {
   };
 
   render() {
-    const { brews, classes, getAllBrews } = this.props;
+    const { user, brews, classes } = this.props;
     const columns = [
       {
         name: 'Name',
@@ -42,10 +49,6 @@ class Brews extends Component {
       onRowClick: this.onRowClick,
     };
 
-    if (brews.length === 0) {
-      getAllBrews();
-    }
-
     const data = brews.reduce((newData, brew) => {
       return [...newData, [brew.name]];
     }, []);
@@ -53,16 +56,18 @@ class Brews extends Component {
     return (
       <>
         <MUIDataTable columns={columns} data={data} options={options} />
-        <Button
-          variant="fab"
-          color="primary"
-          component={Link}
-          aria-label="Add"
-          className={classes.button}
-          to="/brews/create"
-        >
-          <AddIcon />
-        </Button>
+        {user && (
+          <Button
+            variant="fab"
+            color="primary"
+            component={Link}
+            aria-label="Add"
+            className={classes.button}
+            to="/brews/create"
+          >
+            <AddIcon />
+          </Button>
+        )}
       </>
     );
   }
@@ -73,11 +78,13 @@ Brews.propTypes = {
   match: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
+  user: PropTypes.object,
 };
 
 function mapStateToProps(state) {
   return {
     brews: state.brews,
+    user: state.user,
   };
 }
 
